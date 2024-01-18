@@ -36,16 +36,43 @@ class _QuestionsScreenState extends State<QuestionsPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Text(
-              currentQuestion.questionText,
-              style: GoogleFonts.lato(
-                color: const Color.fromARGB(255, 201, 153, 251),
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+            Container(
+              height: 350,
+              width: 391,
+              decoration: BoxDecoration(
+                color: Colors.amber,
+                borderRadius: BorderRadius.circular(20),
               ),
-              textAlign: TextAlign.center,
+              child: Padding(
+                padding: const EdgeInsets.all(25),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 200,
+                      width: 250,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Center(
+                        child: Text('Image Here'),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      currentQuestion.questionText,
+                      style: GoogleFonts.lato(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ],
+                ),
+              ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 10),
             ...currentQuestion.shuffledAnswers.map(
               (answer) {
                 return AnswerButton(
