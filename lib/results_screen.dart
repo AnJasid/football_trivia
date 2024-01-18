@@ -20,7 +20,7 @@ class ResultsScreen extends StatelessWidget {
       summary.add(
         {
           'question_index': i,
-          'question': questions[i].text,
+          'question': questions[i].questionText,
           'correct_answer': questions[i].answers[0],
           'user_answer': chosenAnswers[i]
         },
