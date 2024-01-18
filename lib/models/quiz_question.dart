@@ -1,5 +1,5 @@
-class QuizQuestion {
-  const QuizQuestion({
+class FootballQuestion {
+  const FootballQuestion({
     required this.imageUrl,
     required this.questionText,
     required this.answers,

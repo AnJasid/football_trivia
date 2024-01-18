@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:football_trivia/answer_button.dart';
+import 'package:football_trivia/components/answer_button.dart';
 import 'package:football_trivia/data/questions.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key, required this.onSelectAnswer});
+class QuestionsPage extends StatefulWidget {
+  const QuestionsPage({super.key, required this.onSelectAnswer});
 
   final void Function(String answer) onSelectAnswer;
 
   @override
-  State<QuestionsScreen> createState() => _QuestionsScreenState();
+  State<QuestionsPage> createState() => _QuestionsScreenState();
 }
 
-class _QuestionsScreenState extends State<QuestionsScreen> {
+class _QuestionsScreenState extends State<QuestionsPage> {
   var currentQuestionIndex = 0;
 
   void answerQuestion(String selectedAnswers) {

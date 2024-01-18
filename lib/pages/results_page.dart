@@ -3,8 +3,8 @@ import 'package:football_trivia/data/questions.dart';
 import 'package:football_trivia/questions_summary/questions_summary.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({
+class ResultsPage extends StatelessWidget {
+  const ResultsPage({
     super.key,
     required this.chosenAnswers,
     required this.onRestart,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:football_trivia/data/questions.dart';
-import 'package:football_trivia/questions_screen.dart';
-import 'package:football_trivia/results_screen.dart';
-import 'package:football_trivia/start_screen.dart';
+import 'package:football_trivia/pages/questions_page.dart';
+import 'package:football_trivia/pages/results_page.dart';
+import 'package:football_trivia/pages/start_page.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -40,15 +40,15 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
-    Widget screenWidget = StartScreen(switchScreen);
+    Widget screenWidget = StartPage(switchScreen);
     if (activeScreen == 'questions-screen') {
-      screenWidget = QuestionsScreen(
+      screenWidget = QuestionsPage(
         onSelectAnswer: chooseAnswer,
       );
     }
 
     if (activeScreen == 'results-screen') {
-      screenWidget = ResultsScreen(
+      screenWidget = ResultsPage(
         chosenAnswers: _selectedAnswers,
         onRestart: restartQuiz,
       );

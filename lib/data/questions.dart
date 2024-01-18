@@ -1,7 +1,7 @@
 import 'package:football_trivia/models/quiz_question.dart';
 
 const questions = [
-  QuizQuestion(
+  FootballQuestion(
     imageUrl: '',
     questionText: 'Quiz',
     answers: [
