@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_trivia/components/answer_button.dart';
 import 'package:football_trivia/data/questions.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:football_trivia/utils/styles.dart';
 
 class QuestionsPage extends StatefulWidget {
   const QuestionsPage({super.key, required this.onSelectAnswer});
@@ -37,8 +37,8 @@ class _QuestionsScreenState extends State<QuestionsPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
-              height: 350,
-              width: 391,
+              height: 360,
+              width: 390,
               decoration: BoxDecoration(
                 color: Colors.amber,
                 borderRadius: BorderRadius.circular(20),
@@ -58,21 +58,24 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                         child: Text('Image Here'),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
+                    // question number
+                    Text(
+                      'Question ${currentQuestionIndex + 1} / 20',
+                      style: TextAppearance.bebasNeueSmall,
+                    ),
+                    const SizedBox(height: 10),
+                    // question text
                     Text(
                       currentQuestion.questionText,
-                      style: GoogleFonts.lato(
-                        color: Colors.black,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: TextAppearance.bebasNeueMedium,
                       textAlign: TextAlign.left,
                     ),
                   ],
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 40),
             ...currentQuestion.shuffledAnswers.map(
               (answer) {
                 return AnswerButton(
