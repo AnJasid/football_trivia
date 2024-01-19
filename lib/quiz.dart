@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:football_trivia/data/questions.dart';
 import 'package:football_trivia/pages/questions_page.dart';
@@ -12,6 +14,18 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  // ignore: unused_field
+  late Timer _elapsedTimeTimer;
+  int _elapsedTime = 0;
+
+  void startElapsedTimeTimer() {
+    _elapsedTimeTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      setState(() {
+        _elapsedTime++;
+      });
+    });
+  }
+
   List<String> _selectedAnswers = [];
   String activeScreen = 'start-screen';
 
@@ -25,6 +39,7 @@ class _QuizState extends State<Quiz> {
     _selectedAnswers.add(answer);
 
     if (_selectedAnswers.length == questions.length) {
+      _elapsedTimeTimer.cancel();
       setState(() {
         activeScreen = 'results-screen';
       });
@@ -35,6 +50,7 @@ class _QuizState extends State<Quiz> {
     setState(() {
       _selectedAnswers = [];
       activeScreen = 'questions-screen';
+      _elapsedTime = 0;
     });
   }
 
@@ -44,6 +60,8 @@ class _QuizState extends State<Quiz> {
     if (activeScreen == 'questions-screen') {
       screenWidget = QuestionsPage(
         onSelectAnswer: chooseAnswer,
+        startElapsedTimeTimer: startElapsedTimeTimer,
+        elapsedTime: _elapsedTime,
       );
     }
 
@@ -58,15 +76,7 @@ class _QuizState extends State<Quiz> {
       home: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-            color: Colors.grey[800],
-            // gradient: LinearGradient(
-            //   colors: [
-            //     Color.fromARGB(255, 78, 13, 151),
-            //     Color.fromARGB(255, 107, 15, 168),
-            //   ],
-            //   begin: Alignment.topLeft,
-            //   end: Alignment.bottomRight,
-            // ),
+            color: Colors.grey[700],
           ),
           child: screenWidget,
         ),

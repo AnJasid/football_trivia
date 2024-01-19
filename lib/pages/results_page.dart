@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:football_trivia/data/questions.dart';
-import 'package:football_trivia/questions_summary/questions_summary.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ResultsPage extends StatelessWidget {
   const ResultsPage({
@@ -43,17 +41,43 @@ class ResultsPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
-              style: GoogleFonts.lato(
-                color: const Color.fromARGB(255, 230, 200, 253),
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            Container(
+              height: 300,
+              width: 300,
+              decoration: BoxDecoration(
+                color: Colors.amber,
+                borderRadius: BorderRadius.circular(20),
               ),
-              textAlign: TextAlign.center,
+              child: Center(
+                child: CircleAvatar(
+                  radius: 85,
+                  backgroundColor: Colors.white.withOpacity(0.3),
+                  child: CircleAvatar(
+                    radius: 71,
+                    backgroundColor: Colors.white.withOpacity(0.4),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Text('Your Score'),
+                        Text('$numCorrectQuestions'),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ),
+            // Text(
+            //   'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
+            //   style: GoogleFonts.lato(
+            //     color: const Color.fromARGB(255, 230, 200, 253),
+            //     fontSize: 20,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            //   textAlign: TextAlign.center,
+            // ),
             const SizedBox(height: 30),
-            QuestionsSummary(summaryData),
+            // QuestionsSummary(summaryData),
             const SizedBox(height: 30),
             TextButton.icon(
               onPressed: onRestart,
