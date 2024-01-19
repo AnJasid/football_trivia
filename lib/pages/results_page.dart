@@ -241,6 +241,85 @@ class ResultsPage extends StatelessWidget {
                 ],
               ),
             ),
+            const Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Color(0xff37AFA1),
+                          radius: 35,
+                          child: Center(
+                            child: Icon(
+                              Icons.refresh,
+                              size: 35,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          'Restart',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Color(0xff37AFA1),
+                          radius: 35,
+                          child: Center(
+                            child: Icon(
+                              Icons.visibility_rounded,
+                              size: 35,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          'View Answer',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Color(0xff37AFA1),
+                          radius: 35,
+                          child: Center(
+                            child: Icon(
+                              Icons.home,
+                              size: 35,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          'Home',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
 
             const SizedBox(height: 30),
             // QuestionsSummary(summaryData),
