@@ -77,6 +77,10 @@ class _QuizState extends State<Quiz> {
       home: Scaffold(
         body: Container(
           decoration: BoxDecoration(
+            image: const DecorationImage(
+              image: AssetImage('assets/images/BG1.png'),
+              fit: BoxFit.cover,
+            ),
             color: Colors.grey[700],
           ),
           child: screenWidget,

@@ -56,13 +56,17 @@ class _ResultsPageState extends State<ResultsPage> {
     // Check if the current score is higher than the best score
     if (numCorrectQuestions > bestScore) {
       // Update best score in SharedPreferences
-      saveBestScore(numCorrectQuestions);
+      setState(() {
+        saveBestScore(numCorrectQuestions);
+      });
     }
 
     // Check if the current time is shorter than the best time
     if (widget.elapsedTime < bestTimeInSeconds || bestTimeInSeconds == 0) {
       // Update best time in SharedPreferences
-      saveBestTime(widget.elapsedTime);
+      setState(() {
+        saveBestTime(widget.elapsedTime);
+      });
     }
 
     return SizedBox(
@@ -115,9 +119,9 @@ class _ResultsPageState extends State<ResultsPage> {
                       ),
                       child: Column(
                         children: [
-                          Text('$numCorrectQuestions'),
+                          Text('Score: $numCorrectQuestions'),
                           Text(
-                              '${(widget.elapsedTime ~/ 3600).toString().padLeft(2, '0')}:${((widget.elapsedTime % 3600) ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}'),
+                              'Best Score: ${(widget.elapsedTime ~/ 3600).toString().padLeft(2, '0')}:${((widget.elapsedTime % 3600) ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}'),
                           const SizedBox(height: 10),
                           // Show best score and best time widgets
                           Text(
