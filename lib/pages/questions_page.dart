@@ -86,8 +86,15 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                         width: double.infinity,
                         child: Stack(
                           children: [
-                            SizedBox(
-                              height: 28,
+                            Container(
+                              height: 30,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 3,
+                                ),
+                                borderRadius: BorderRadius.circular(13.5),
+                              ),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
                                 child: LinearProgressIndicator(

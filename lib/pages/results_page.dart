@@ -214,28 +214,33 @@ class _ResultsPageState extends State<ResultsPage> {
                         ],
                       ),
                     ),
-                    const Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Color(0xff37AFA1),
-                          radius: 35,
-                          child: Center(
-                            child: Icon(
-                              Icons.visibility_rounded,
-                              size: 35,
-                              color: Colors.white,
+                    GestureDetector(
+                      onTap: () {
+                        openViewAnswer(context);
+                      },
+                      child: const Column(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Color(0xff37AFA1),
+                            radius: 35,
+                            child: Center(
+                              child: Icon(
+                                Icons.visibility_rounded,
+                                size: 35,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          'View Answer',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
+                          SizedBox(height: 10),
+                          Text(
+                            'View Answer',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),
