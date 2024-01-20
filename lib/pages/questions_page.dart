@@ -45,57 +45,78 @@ class _QuestionsScreenState extends State<QuestionsPage> {
     return SizedBox(
       width: double.infinity,
       child: Container(
-        margin: const EdgeInsets.all(40),
+        // margin: const EdgeInsets.all(40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            // Container(
-            //   width: double.infinity,
-            //   height: 35,
-            //   decoration: BoxDecoration(
-            //     border: Border.all(color: const Color(0xFF3F4768), width: 3),
-            //     borderRadius: BorderRadius.circular(50),
-            //   ),
-            //   child: const Stack(
-            //     children: [],
-            //   ),
-            // ),
-
-            SizedBox(
-              height: 25,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: LinearProgressIndicator(
-                  value: widget.elapsedTime / widget.totalTime,
-                  backgroundColor: Colors.grey,
-                  valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
-                ),
-              ),
-            ),
-            Text(
-              '${(widget.elapsedTime / widget.totalTime * 100).toStringAsFixed(1)}% Complete',
-              style: const TextStyle(fontSize: 16.0, color: Colors.white),
-            ),
             // Text(
             //   'Time spent: ${(widget.elapsedTime ~/ 3600).toString().padLeft(2, '0')}:${((widget.elapsedTime % 3600) ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
             //   style: const TextStyle(fontSize: 16.0, color: Colors.white),
             // ),
-            const SizedBox(height: 10),
+            // const SizedBox(height: 10),
+
             Container(
-              height: 360,
+              height: 400,
               width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.amber,
-                borderRadius: BorderRadius.circular(20),
+              decoration: const BoxDecoration(
+                color: Color(0xff38649c),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(80),
+                  bottomRight: Radius.circular(80),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black,
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
               ),
               child: Padding(
                 padding: const EdgeInsets.all(25),
                 child: Column(
                   children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: Stack(
+                        children: [
+                          SizedBox(
+                            height: 28,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: LinearProgressIndicator(
+                                value: widget.elapsedTime / widget.totalTime,
+                                backgroundColor: Colors.grey,
+                                valueColor: const AlwaysStoppedAnimation<Color>(
+                                    Colors.blue),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            right: 0,
+                            top: 0,
+                            bottom: 0,
+                            child: Container(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8),
+                              alignment: Alignment.center,
+                              color: Colors.transparent,
+                              child: Text(
+                                '${(widget.elapsedTime ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
+                                style: const TextStyle(
+                                    fontSize: 16.0, color: Colors.white),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 10),
                     Container(
                       height: 200,
-                      width: 250,
+                      width: 300,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
@@ -121,17 +142,43 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 40),
-            ...shuffledAnswers.map(
-              (answer) {
-                return AnswerButton(
-                  answerText: answer,
-                  onTap: () {
-                    answerQuestion(answer);
-                  },
-                );
-              },
+            const SizedBox(height: 25),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: const Color(0xff48bcfc),
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 30,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      ...shuffledAnswers.map(
+                        (answer) {
+                          return AnswerButton(
+                            answerText: answer,
+                            onTap: () {
+                              answerQuestion(answer);
+                            },
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
+
+            // const SizedBox(height: 40),
+
             // ...currentQuestion.shuffledAnswers.map(
             //   (answer) {
             //     return AnswerButton(

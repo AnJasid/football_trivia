@@ -7,6 +7,7 @@ class TextAppearance {
     fontFamily: GoogleFonts.bebasNeue().fontFamily,
     fontSize: 14,
     fontWeight: FontWeight.bold,
+    color: Colors.white,
   );
 
   static final bebasNeueSmall = TextStyle(
