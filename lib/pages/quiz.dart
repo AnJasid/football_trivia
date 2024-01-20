@@ -18,6 +18,8 @@ class _QuizState extends State<Quiz> {
   late Timer _elapsedTimeTimer;
   int _elapsedTime = 0;
 
+  int totalTimeInSeconds = 20 * 60;
+
   void startElapsedTimeTimer() {
     _elapsedTimeTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
@@ -62,6 +64,7 @@ class _QuizState extends State<Quiz> {
         onSelectAnswer: chooseAnswer,
         startElapsedTimeTimer: startElapsedTimeTimer,
         elapsedTime: _elapsedTime,
+        totalTime: totalTimeInSeconds,
       );
     }
 

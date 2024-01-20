@@ -9,11 +9,13 @@ class QuestionsPage extends StatefulWidget {
     required this.onSelectAnswer,
     required this.startElapsedTimeTimer,
     required this.elapsedTime,
+    required this.totalTime,
   });
 
   final void Function(String answer) onSelectAnswer;
   final void Function() startElapsedTimeTimer;
   final int elapsedTime;
+  final int totalTime;
 
   @override
   State<QuestionsPage> createState() => _QuestionsScreenState();
@@ -59,10 +61,26 @@ class _QuestionsScreenState extends State<QuestionsPage> {
             //     children: [],
             //   ),
             // ),
+
+            SizedBox(
+              height: 25,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: LinearProgressIndicator(
+                  value: widget.elapsedTime / widget.totalTime,
+                  backgroundColor: Colors.grey,
+                  valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
+                ),
+              ),
+            ),
             Text(
-              'Time spent: ${(widget.elapsedTime ~/ 3600).toString().padLeft(2, '0')}:${((widget.elapsedTime % 3600) ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
+              '${(widget.elapsedTime / widget.totalTime * 100).toStringAsFixed(1)}% Complete',
               style: const TextStyle(fontSize: 16.0, color: Colors.white),
             ),
+            // Text(
+            //   'Time spent: ${(widget.elapsedTime ~/ 3600).toString().padLeft(2, '0')}:${((widget.elapsedTime % 3600) ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
+            //   style: const TextStyle(fontSize: 16.0, color: Colors.white),
+            // ),
             const SizedBox(height: 10),
             Container(
               height: 360,
