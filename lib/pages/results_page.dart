@@ -97,7 +97,6 @@ class _ResultsPageState extends State<ResultsPage> {
           children: <Widget>[
             Container(
               width: double.infinity,
-              height: 400,
               decoration: BoxDecoration(
                 color: const Color(0xff38649c),
                 borderRadius: BorderRadius.circular(20),
@@ -106,15 +105,151 @@ class _ResultsPageState extends State<ResultsPage> {
                   width: 3,
                 ),
               ),
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Divider(
-                    color: Colors.white,
-                    thickness: 2,
-                    height: 40,
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 85,
+                      backgroundColor: Colors.white.withOpacity(0.3),
+                      child: CircleAvatar(
+                        radius: 71,
+                        backgroundColor: Colors.white.withOpacity(0.4),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Text('Your Score'),
+                            Text('${numCorrectQuestions * 10}%'),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const Divider(
+                      color: Colors.white,
+                      thickness: 2,
+                      height: 40,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xffA42FC1),
+                                    ),
+                                  ),
+                                  const Text(
+                                    '100%',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                              const Text(
+                                'Completion',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xffA42FC1),
+                                    ),
+                                  ),
+                                  const Text(
+                                    '20',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                              const Text(
+                                'Total Question',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                  Text(
+                                    numCorrectQuestions.toString(),
+                                    style: const TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                              const Text(
+                                'Correct',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.red,
+                                    ),
+                                  ),
+                                  const Text(
+                                    '0',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                              const Text(
+                                'Wrong',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
 
@@ -208,7 +343,8 @@ class _ResultsPageState extends State<ResultsPage> {
                             'Restart',
                             style: TextStyle(
                               fontSize: 15,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
                             ),
                           ),
                         ],
@@ -236,7 +372,8 @@ class _ResultsPageState extends State<ResultsPage> {
                             'View Answer',
                             style: TextStyle(
                               fontSize: 15,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
                             ),
                           ),
                         ],
