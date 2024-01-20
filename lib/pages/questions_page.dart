@@ -42,154 +42,171 @@ class _QuestionsScreenState extends State<QuestionsPage> {
     final currentQuestion = questions[currentQuestionIndex];
     final shuffledAnswers = currentQuestion.shuffledAnswers;
 
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
-        // margin: const EdgeInsets.all(40),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            // Text(
-            //   'Time spent: ${(widget.elapsedTime ~/ 3600).toString().padLeft(2, '0')}:${((widget.elapsedTime % 3600) ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
-            //   style: const TextStyle(fontSize: 16.0, color: Colors.white),
-            // ),
-            // const SizedBox(height: 10),
+    return SafeArea(
+      child: SizedBox(
+        width: double.infinity,
+        child: Container(
+          // margin: const EdgeInsets.all(40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              // Text(
+              //   'Time spent: ${(widget.elapsedTime ~/ 3600).toString().padLeft(2, '0')}:${((widget.elapsedTime % 3600) ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
+              //   style: const TextStyle(fontSize: 16.0, color: Colors.white),
+              // ),
+              // const SizedBox(height: 10),
 
-            Container(
-              height: 400,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                color: Color(0xff38649c),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(80),
-                  bottomRight: Radius.circular(80),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black,
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 3), // changes position of shadow
+              Container(
+                height: 400,
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                  color: Color(0xff38649c),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(80),
+                    bottomRight: Radius.circular(80),
                   ),
-                ],
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(25),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: Stack(
-                        children: [
-                          SizedBox(
-                            height: 28,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: LinearProgressIndicator(
-                                value: widget.elapsedTime / widget.totalTime,
-                                backgroundColor: Colors.grey,
-                                valueColor: const AlwaysStoppedAnimation<Color>(
-                                    Colors.blue),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            right: 0,
-                            top: 0,
-                            bottom: 0,
-                            child: Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8),
-                              alignment: Alignment.center,
-                              color: Colors.transparent,
-                              child: Text(
-                                '${(widget.elapsedTime ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
-                                style: const TextStyle(
-                                    fontSize: 16.0, color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Container(
-                      height: 200,
-                      width: 300,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: const Center(
-                        child: Text('Image Here'),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    // question number
-                    Text(
-                      'Question ${currentQuestionIndex + 1} / 20',
-                      style: TextAppearance.bebasNeueSmall,
-                    ),
-                    const SizedBox(height: 10),
-                    // question text
-                    Text(
-                      currentQuestion.questionText,
-                      style: TextAppearance.bebasNeueMedium,
-                      textAlign: TextAlign.left,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black,
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: Offset(0, 3), // changes position of shadow
                     ),
                   ],
                 ),
-              ),
-            ),
-            const SizedBox(height: 25),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: const Color(0xff48bcfc),
-                  borderRadius: BorderRadius.circular(40),
-                ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 30,
+                    horizontal: 30,
+                    vertical: 15,
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      ...shuffledAnswers.map(
-                        (answer) {
-                          return AnswerButton(
-                            answerText: answer,
-                            onTap: () {
-                              answerQuestion(answer);
-                            },
-                          );
-                        },
+                      SizedBox(
+                        width: double.infinity,
+                        child: Stack(
+                          children: [
+                            SizedBox(
+                              height: 28,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: LinearProgressIndicator(
+                                  value: widget.elapsedTime / widget.totalTime,
+                                  backgroundColor: Colors.grey,
+                                  valueColor:
+                                      const AlwaysStoppedAnimation<Color>(
+                                    Color(0xff00ccff),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              right: 0,
+                              top: 0,
+                              bottom: 0,
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8),
+                                alignment: Alignment.center,
+                                color: Colors.transparent,
+                                child: Text(
+                                  '${(widget.elapsedTime ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
+                                  style: const TextStyle(
+                                      fontSize: 16.0, color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Container(
+                        height: 200,
+                        width: 300,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset(
+                            currentQuestion.imageUrl,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      // question number
+                      Text(
+                        'Question ${currentQuestionIndex + 1} / 20',
+                        style: TextAppearance.bebasNeueSmall,
+                      ),
+                      const SizedBox(height: 10),
+                      // question text
+                      Text(
+                        currentQuestion.questionText,
+                        style: TextAppearance.bebasNeueMedium,
+                        textAlign: TextAlign.left,
                       ),
                     ],
                   ),
                 ),
               ),
-            ),
+              const SizedBox(height: 30),
 
-            // const SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color(0xff00ccff),
+                          Color(0xff0066ff),
+                        ]),
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 15,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        ...shuffledAnswers.map(
+                          (answer) {
+                            return AnswerButton(
+                              answerText: answer,
+                              onTap: () {
+                                answerQuestion(answer);
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
 
-            // ...currentQuestion.shuffledAnswers.map(
-            //   (answer) {
-            //     return AnswerButton(
-            //       answerText: answer,
-            //       onTap: () {
-            //         answerQuestion(answer);
-            //       },
-            //     );
-            //   },
-            // ),
-          ],
+              // const SizedBox(height: 40),
+
+              // ...currentQuestion.shuffledAnswers.map(
+              //   (answer) {
+              //     return AnswerButton(
+              //       answerText: answer,
+              //       onTap: () {
+              //         answerQuestion(answer);
+              //       },
+              //     );
+              //   },
+              // ),
+            ],
+          ),
         ),
       ),
     );
