@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_trivia/data/questions.dart';
+import 'package:football_trivia/pages/start_page.dart';
+import 'package:football_trivia/pages/view_answer_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ResultsPage extends StatefulWidget {
@@ -44,6 +46,23 @@ class _ResultsPageState extends State<ResultsPage> {
     // Load previous best score and best time from SharedPreferences
     loadBestScore();
     loadBestTime();
+  }
+
+  void _goToStartPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) => StartPage(() {}),
+      ),
+    );
+  }
+
+  void openViewAnswer(BuildContext context) {
+    showModalBottomSheet(
+      useSafeArea: true,
+      isScrollControlled: true,
+      context: context,
+      builder: (ctx) => const ViewAnswerPage(),
+    );
   }
 
   @override
@@ -163,36 +182,39 @@ class _ResultsPageState extends State<ResultsPage> {
             //   ),
             // ),
             const SizedBox(height: 30),
-            const Center(
+            Center(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 18),
+                padding: const EdgeInsets.symmetric(horizontal: 18),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Color(0xff37AFA1),
-                          radius: 35,
-                          child: Center(
-                            child: Icon(
-                              Icons.refresh,
-                              size: 35,
-                              color: Colors.white,
+                    GestureDetector(
+                      onTap: widget.onRestart,
+                      child: const Column(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Color(0xff37AFA1),
+                            radius: 35,
+                            child: Center(
+                              child: Icon(
+                                Icons.refresh,
+                                size: 35,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          'Restart',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
+                          SizedBox(height: 10),
+                          Text(
+                            'Restart',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    Column(
+                    const Column(
                       children: [
                         CircleAvatar(
                           backgroundColor: Color(0xff37AFA1),
@@ -215,50 +237,11 @@ class _ResultsPageState extends State<ResultsPage> {
                         ),
                       ],
                     ),
-                    Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Color(0xff37AFA1),
-                          radius: 35,
-                          child: Center(
-                            child: Icon(
-                              Icons.home,
-                              size: 35,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          'Home',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
                   ],
                 ),
               ),
             ),
-
-            const SizedBox(height: 30),
-            // QuestionsSummary(summaryData),
-            const SizedBox(height: 30),
-            TextButton.icon(
-              onPressed: widget.onRestart,
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.white,
-              ),
-              icon: const Icon(Icons.refresh),
-              label: const Text(
-                'Restart',
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-              ),
-            ),
+// QuestionsSummary(summaryData),
           ],
         ),
       ),
