@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:football_trivia/components/custom_button.dart';
 import 'package:football_trivia/data/questions.dart';
 import 'package:football_trivia/pages/start_page.dart';
 import 'package:football_trivia/pages/view_answer_page.dart';
@@ -233,9 +234,9 @@ class _ResultsPageState extends State<ResultsPage> {
                                       color: Colors.red,
                                     ),
                                   ),
-                                  const Text(
-                                    '0',
-                                    style: TextStyle(color: Colors.white),
+                                  Text(
+                                    '${(numTotalQuestions - numCorrectQuestions)}',
+                                    style: const TextStyle(color: Colors.white),
                                   ),
                                 ],
                               ),
@@ -323,62 +324,15 @@ class _ResultsPageState extends State<ResultsPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    GestureDetector(
+                    // button Restart
+                    CustomButton(
                       onTap: widget.onRestart,
-                      child: const Column(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Color(0xff37AFA1),
-                            radius: 35,
-                            child: Center(
-                              child: Icon(
-                                Icons.refresh,
-                                size: 35,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            'Restart',
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
+                      buttonText: 'Restart',
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        openViewAnswer(context);
-                      },
-                      child: const Column(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Color(0xff37AFA1),
-                            radius: 35,
-                            child: Center(
-                              child: Icon(
-                                Icons.visibility_rounded,
-                                size: 35,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            'View Answer',
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    // button View Answer
+                    CustomButton(
+                        onTap: () => openViewAnswer(context),
+                        buttonText: 'View Answer'),
                   ],
                 ),
               ),
