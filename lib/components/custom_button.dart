@@ -5,10 +5,12 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.buttonText,
+    required this.iconData,
   });
 
   final String buttonText;
   final void Function() onTap;
+  final IconData iconData;
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +18,12 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       child: Column(
         children: [
-          const CircleAvatar(
-            backgroundColor: Color(0xff37AFA1),
+          CircleAvatar(
+            backgroundColor: const Color(0xff37AFA1),
             radius: 35,
             child: Center(
               child: Icon(
-                Icons.refresh,
+                iconData,
                 size: 35,
                 color: Colors.white,
               ),
