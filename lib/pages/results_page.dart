@@ -139,7 +139,7 @@ class _ResultsPageState extends State<ResultsPage> {
                           Text(
                             '${numCorrectQuestions * 10}%',
                             style: const TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.w900,
                             ),
                           ),
@@ -162,81 +162,72 @@ class _ResultsPageState extends State<ResultsPage> {
                               Row(
                                 children: [
                                   Container(
-                                    height: 15,
-                                    width: 15,
+                                    height: 25,
+                                    width: 25,
                                     decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: Color(0xffA42FC1),
+                                      color: Colors.amber,
+                                    ),
+                                    child: const Center(
+                                      child: Icon(
+                                        Icons.access_time_rounded,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
                                     ),
                                   ),
-                                  const Text(
-                                    '100%',
-                                    style: TextStyle(color: Colors.white),
+                                  const SizedBox(width: 2),
+                                  Text(
+                                    '${((widget.elapsedTime % 3600) ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
+                                    style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ],
                               ),
                               const Text(
-                                'Completion',
-                                style: TextStyle(color: Colors.white),
+                                'Completion Time',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
                               ),
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                              const SizedBox(height: 20),
                               Row(
                                 children: [
                                   Container(
-                                    height: 15,
-                                    width: 15,
-                                    decoration: const BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Color(0xffA42FC1),
-                                    ),
-                                  ),
-                                  const Text(
-                                    '20',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
-                              ),
-                              const Text(
-                                'Total Question',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    height: 15,
-                                    width: 15,
+                                    height: 25,
+                                    width: 25,
                                     decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: Colors.green,
                                     ),
+                                    child: const Center(
+                                      child: Icon(
+                                        Icons.check,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
+                                    ),
                                   ),
+                                  const SizedBox(width: 2),
                                   Text(
                                     numCorrectQuestions.toString(),
-                                    style: const TextStyle(color: Colors.white),
+                                    // ignore: prefer_const_constructors
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ],
                               ),
                               const Text(
                                 'Correct',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
                               ),
                             ],
                           ),
@@ -246,16 +237,64 @@ class _ResultsPageState extends State<ResultsPage> {
                               Row(
                                 children: [
                                   Container(
-                                    height: 15,
-                                    width: 15,
+                                    height: 25,
+                                    width: 25,
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.purple,
+                                    ),
+                                    child: const Center(
+                                      child: Icon(
+                                        Icons.quiz,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 2),
+                                  const Text(
+                                    '20',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const Text(
+                                'Total Question',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 25,
+                                    width: 25,
                                     decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: Colors.red,
                                     ),
+                                    child: const Center(
+                                      child: Icon(
+                                        Icons.cancel,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
+                                    ),
                                   ),
+                                  const SizedBox(width: 2),
                                   Text(
                                     '${(numTotalQuestions - numCorrectQuestions)}',
-                                    style: const TextStyle(color: Colors.white),
+                                    // ignore: prefer_const_constructors
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -268,6 +307,123 @@ class _ResultsPageState extends State<ResultsPage> {
                         ],
                       ),
                     ),
+                    // Padding(
+                    //   padding: const EdgeInsets.symmetric(horizontal: 30),
+                    //   child: Row(
+                    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //     children: [
+                    //       Column(
+                    //         crossAxisAlignment: CrossAxisAlignment.start,
+                    //         children: [
+                    //           Row(
+                    //             children: [
+                    //               Container(
+                    //                 height: 15,
+                    //                 width: 15,
+                    //                 decoration: const BoxDecoration(
+                    //                   shape: BoxShape.circle,
+                    //                   color: Color(0xffA42FC1),
+                    //                 ),
+                    //               ),
+                    //               const Text(
+                    //                 '100%',
+                    //                 style: TextStyle(color: Colors.white),
+                    //               ),
+                    //             ],
+                    //           ),
+                    //           const Text(
+                    //             'Completion',
+                    //             style: TextStyle(color: Colors.white),
+                    //           ),
+                    //         ],
+                    //       ),
+                    //       Column(
+                    //         crossAxisAlignment: CrossAxisAlignment.start,
+                    //         children: [
+                    //           Row(
+                    //             children: [
+                    //               Container(
+                    //                 height: 15,
+                    //                 width: 15,
+                    //                 decoration: const BoxDecoration(
+                    //                   shape: BoxShape.circle,
+                    //                   color: Color(0xffA42FC1),
+                    //                 ),
+                    //               ),
+                    //               const Text(
+                    //                 '20',
+                    //                 style: TextStyle(color: Colors.white),
+                    //               ),
+                    //             ],
+                    //           ),
+                    //           const Text(
+                    //             'Total Question',
+                    //             style: TextStyle(color: Colors.white),
+                    //           ),
+                    //         ],
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    const SizedBox(height: 15),
+                    // Padding(
+                    //   padding: const EdgeInsets.symmetric(horizontal: 30),
+                    //   child: Row(
+                    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //     children: [
+                    //       Column(
+                    //         crossAxisAlignment: CrossAxisAlignment.start,
+                    //         children: [
+                    //           Row(
+                    //             children: [
+                    //               Container(
+                    //                 height: 15,
+                    //                 width: 15,
+                    //                 decoration: const BoxDecoration(
+                    //                   shape: BoxShape.circle,
+                    //                   color: Colors.green,
+                    //                 ),
+                    //               ),
+                    //               Text(
+                    //                 numCorrectQuestions.toString(),
+                    //                 style: const TextStyle(color: Colors.white),
+                    //               ),
+                    //             ],
+                    //           ),
+                    //           const Text(
+                    //             'Correct',
+                    //             style: TextStyle(color: Colors.white),
+                    //           ),
+                    //         ],
+                    //       ),
+                    //       Column(
+                    //         crossAxisAlignment: CrossAxisAlignment.start,
+                    //         children: [
+                    //           Row(
+                    //             children: [
+                    //               Container(
+                    //                 height: 15,
+                    //                 width: 15,
+                    //                 decoration: const BoxDecoration(
+                    //                   shape: BoxShape.circle,
+                    //                   color: Colors.red,
+                    //                 ),
+                    //               ),
+                    //               Text(
+                    //                 '${(numTotalQuestions - numCorrectQuestions)}',
+                    //                 style: const TextStyle(color: Colors.white),
+                    //               ),
+                    //             ],
+                    //           ),
+                    //           const Text(
+                    //             'Wrong',
+                    //             style: TextStyle(color: Colors.white),
+                    //           ),
+                    //         ],
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -347,11 +503,14 @@ class _ResultsPageState extends State<ResultsPage> {
                     CustomButton(
                       onTap: widget.onRestart,
                       buttonText: 'Restart',
+                      iconData: Icons.refresh,
                     ),
                     // button View Answer
                     CustomButton(
-                        onTap: () => openViewAnswer(context),
-                        buttonText: 'View Answer'),
+                      onTap: () => openViewAnswer(context),
+                      buttonText: 'View Answer',
+                      iconData: Icons.visibility_rounded,
+                    ),
                   ],
                 ),
               ),
