@@ -13,5 +13,6 @@ class TextAppearance {
   static final bebasNeueSmall = TextStyle(
     fontFamily: GoogleFonts.bebasNeue().fontFamily,
     fontSize: 12,
+    color: Colors.white,
   );
 }
