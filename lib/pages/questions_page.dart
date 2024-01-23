@@ -125,7 +125,7 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                                     child: Text(
                                       '${(widget.elapsedTime ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
                                       style: const TextStyle(
-                                          fontSize: 16.0, color: Colors.white),
+                                          fontSize: 16.0, color: Colors.black),
                                     ),
                                   ),
                                 ),
@@ -140,6 +140,10 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: Colors.white,
+                                width: 2.0,
+                              ),
                             ),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
@@ -152,7 +156,7 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                           const SizedBox(height: 10),
                           // question number
                           Text(
-                            'Question ${currentQuestionIndex + 1} / 20',
+                            'Question ${currentQuestionIndex + 1} / 25',
                             style: TextAppearance.bebasNeueSmall,
                           ),
                           const SizedBox(height: 10),
@@ -211,7 +215,7 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 25),
 
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
