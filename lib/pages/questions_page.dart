@@ -133,7 +133,6 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                             ),
                           ),
                           const SizedBox(height: 10),
-
                           Container(
                             height: 200,
                             width: 300,

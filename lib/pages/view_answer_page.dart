@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:football_trivia/components/custom_button.dart';
 import 'package:football_trivia/data/questions.dart';
 import 'package:football_trivia/questions_summary/questions_summary.dart';
 
@@ -42,7 +43,7 @@ class ViewAnswerPage extends StatelessWidget {
         height: double.infinity,
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.8),
+            color: Colors.black.withOpacity(0.4),
           ),
           margin: const EdgeInsets.all(20),
           child: Column(
@@ -51,20 +52,24 @@ class ViewAnswerPage extends StatelessWidget {
               const SizedBox(height: 40),
               QuestionsSummary(summaryData),
               const SizedBox(height: 10),
-              TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text(
-                  'BACK',
-                  style: TextStyle(
-                    fontFamily: 'Cambria',
-                    fontSize: 20,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+              CustomButton(
+                  onTap: () => Navigator.pop(context),
+                  buttonText: 'BACK',
+                  iconData: Icons.arrow_back_rounded),
+              // TextButton(
+              //   onPressed: () {
+              //     Navigator.pop(context);
+              //   },
+              //   child: const Text(
+              //     'BACK',
+              //     style: TextStyle(
+              //       fontFamily: 'Cambria',
+              //       fontSize: 20,
+              //       fontWeight: FontWeight.w900,
+              //       color: Colors.white,
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),

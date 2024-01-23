@@ -18,14 +18,22 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       child: Column(
         children: [
-          CircleAvatar(
-            backgroundColor: const Color(0xff37AFA1),
-            radius: 35,
-            child: Center(
-              child: Icon(
-                iconData,
-                size: 35,
-                color: Colors.white,
+          Container(
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: Colors.white,
+                  width: 2.0,
+                )),
+            child: CircleAvatar(
+              backgroundColor: const Color(0xff37AFA1),
+              radius: 35,
+              child: Center(
+                child: Icon(
+                  iconData,
+                  size: 35,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
