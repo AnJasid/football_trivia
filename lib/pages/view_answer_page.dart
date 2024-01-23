@@ -41,7 +41,10 @@ class ViewAnswerPage extends StatelessWidget {
       child: SizedBox(
         height: double.infinity,
         child: Container(
-          margin: const EdgeInsets.all(40),
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.8),
+          ),
+          margin: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
