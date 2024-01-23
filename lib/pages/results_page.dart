@@ -62,7 +62,7 @@ class _ResultsPageState extends State<ResultsPage> {
       useSafeArea: true,
       isScrollControlled: true,
       context: context,
-      builder: (ctx) => const ViewAnswerPage(),
+      builder: (ctx) => ViewAnswerPage(chosenAnswers: widget.chosenAnswers),
     );
   }
 

@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class StartPage extends StatelessWidget {
+class StartPage extends StatefulWidget {
   const StartPage(this.startQuiz, {super.key});
 
   final void Function() startQuiz;
+
+  @override
+  State<StartPage> createState() => _StartPageState();
+}
+
+class _StartPageState extends State<StartPage> {
+  double imageSize = 150.0; // Initial size of the image
+  void toggleImageSize() {
+    setState(() {
+      // Toggle between original and smaller size
+      imageSize = (imageSize == 150.0) ? 100.0 : 150.0;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +25,11 @@ class StartPage extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Image.asset(
-            '', //to place here the app icon
-            width: 300,
-            color: const Color.fromARGB(150, 255, 255, 255),
-          ),
+          // Image.asset(
+          //   '', //to place here the app icon
+          //   width: 300,
+          //   color: const Color.fromARGB(150, 255, 255, 255),
+          // ),
           const SizedBox(height: 80),
           // Text(
           //   'Text Here',
@@ -27,7 +40,7 @@ class StartPage extends StatelessWidget {
           // ),
           const SizedBox(height: 30),
           GestureDetector(
-            onTap: startQuiz,
+            onTap: widget.startQuiz,
             child: Container(
               // ignore: prefer_const_constructors
               padding: EdgeInsets.symmetric(
