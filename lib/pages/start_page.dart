@@ -25,11 +25,10 @@ class _StartPageState extends State<StartPage> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          // Image.asset(
-          //   '', //to place here the app icon
-          //   width: 300,
-          //   color: const Color.fromARGB(150, 255, 255, 255),
-          // ),
+          Image.asset(
+            'assets/images/logo.png', //to place here the app icon
+            width: 380,
+          ),
           const SizedBox(height: 80),
           // Text(
           //   'Text Here',
