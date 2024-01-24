@@ -32,9 +32,8 @@ class ViewAnswerPage extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      // ignore: prefer_const_constructors
-      decoration: BoxDecoration(
-        image: const DecorationImage(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
           image: AssetImage('assets/images/BG1.png'),
           fit: BoxFit.cover,
         ),
@@ -43,7 +42,7 @@ class ViewAnswerPage extends StatelessWidget {
         height: double.infinity,
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.4),
+            color: Colors.black.withOpacity(0.5),
           ),
           margin: const EdgeInsets.all(20),
           child: Column(
@@ -51,7 +50,7 @@ class ViewAnswerPage extends StatelessWidget {
             children: [
               const SizedBox(height: 40),
               QuestionsSummary(summaryData),
-              const SizedBox(height: 10),
+              const SizedBox(height: 40),
               CustomButton(
                   onTap: () => Navigator.pop(context),
                   buttonText: 'BACK',

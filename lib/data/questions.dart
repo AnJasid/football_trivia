@@ -13,18 +13,18 @@ final questions = [
       'Cristiano Ronaldo',
     ],
   ),
-  // FootballQuestion(
-  //   // Ángel Fabián Di María
-  //   imageUrl: 'assets/images/players/AngelFabianDiMaria.png',
-  //   questionText:
-  //       'A footballer from Argentina, he serves as a right winger or attacking midfielder for the Primeira Liga club Benfica and the national team of Argentina. His reputation is built on exceptional dribbling, playmaking abilities, and distinctive finishing.',
-  //   answers: [
-  //     'Ángel Fabián Di María',
-  //     'Riyad Karim Mahrez',
-  //     'Frenkie de Jong',
-  //     'İlkay Gündoğan',
-  //   ],
-  // ),
+  FootballQuestion(
+    // Ángel Fabián Di María
+    imageUrl: 'assets/images/players/AngelFabianDiMaria.png',
+    questionText:
+        'A footballer from Argentina, he serves as a right winger or attacking midfielder for the Primeira Liga club Benfica and the national team of Argentina. His reputation is built on exceptional dribbling, playmaking abilities, and distinctive finishing.',
+    answers: [
+      'Ángel Fabián Di María',
+      'Riyad Karim Mahrez',
+      'Frenkie de Jong',
+      'İlkay Gündoğan',
+    ],
+  ),
   // FootballQuestion(
   //   // Antoine Griezmann
   //   imageUrl: 'assets/images/players/AntoineGriezmann.png',

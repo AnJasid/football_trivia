@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "672433736582",
+    "project_id": "football-quiz-70a09",
+    "storage_bucket": "football-quiz-70a09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672433736582:android:571f948d3463a618827a07",
+        "android_client_info": {
+          "package_name": "com.innovativefun.footballquiz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiPnGGw_9gCDTEgb2cL6kxvQfBiNG8Fyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.football_trivia
+package com.innovativefun.footballquiz
 
 import io.flutter.embedding.android.FlutterActivity
 
