@@ -120,11 +120,13 @@ class _ResultsPageState extends State<ResultsPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: 90,
-                      height: 90,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 2.0,
+                        ),
+                        gradient: const LinearGradient(
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
@@ -133,25 +135,31 @@ class _ResultsPageState extends State<ResultsPage> {
                           ],
                         ),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'Your Score',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w900,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 35,
+                          vertical: 8,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'Your Score',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w900,
+                              ),
                             ),
-                          ),
-                          Text(
-                            '${numCorrectQuestions * 10}%',
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w900,
+                            Text(
+                              '${numCorrectQuestions * 10}%',
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w900,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                     const Divider(
