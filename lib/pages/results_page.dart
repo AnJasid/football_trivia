@@ -253,7 +253,7 @@ class _ResultsPageState extends State<ResultsPage> {
                                   ),
                                   const SizedBox(width: 2),
                                   const Text(
-                                    '20',
+                                    '25',
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w900,
@@ -497,7 +497,7 @@ class _ResultsPageState extends State<ResultsPage> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     // button Restart
                     CustomButton(
@@ -505,6 +505,11 @@ class _ResultsPageState extends State<ResultsPage> {
                       buttonText: 'Restart',
                       iconData: Icons.refresh,
                     ),
+                    // CustomButton(
+                    //   onTap: ,
+                    //   buttonText: 'Home',
+                    //   iconData: Icons.home,
+                    // ),
                     // button View Answer
                     CustomButton(
                       onTap: () => openViewAnswer(context),

@@ -27,11 +27,11 @@ class CustomButton extends StatelessWidget {
                 )),
             child: CircleAvatar(
               backgroundColor: const Color(0xff37AFA1),
-              radius: 35,
+              radius: 30,
               child: Center(
                 child: Icon(
                   iconData,
-                  size: 35,
+                  size: 30,
                   color: Colors.white,
                 ),
               ),
@@ -41,7 +41,6 @@ class CustomButton extends StatelessWidget {
           Text(
             buttonText,
             style: const TextStyle(
-              fontSize: 15,
               fontWeight: FontWeight.w600,
               color: Colors.white,
             ),

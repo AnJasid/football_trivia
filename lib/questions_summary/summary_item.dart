@@ -27,6 +27,7 @@ class SummaryItem extends StatelessWidget {
             color: Colors.white,
             width: 1.0,
           ),
+          color: Colors.black.withOpacity(0.5),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),

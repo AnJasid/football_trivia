@@ -65,7 +65,7 @@ class _StartPageState extends State<StartPage> {
                 'BEGIN',
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.w500,
                 ),
               ),
