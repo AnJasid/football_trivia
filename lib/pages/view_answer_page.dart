@@ -45,7 +45,6 @@ class ViewAnswerPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
               const Text(
                 'VIEW ANSWER',
                 style: TextStyle(
@@ -55,25 +54,11 @@ class ViewAnswerPage extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               QuestionsSummary(summaryData),
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
               CustomButton(
                   onTap: () => Navigator.pop(context),
                   buttonText: 'BACK',
                   iconData: Icons.arrow_back_rounded),
-              // TextButton(
-              //   onPressed: () {
-              //     Navigator.pop(context);
-              //   },
-              //   child: const Text(
-              //     'BACK',
-              //     style: TextStyle(
-              //       fontFamily: 'Cambria',
-              //       fontSize: 20,
-              //       fontWeight: FontWeight.w900,
-              //       color: Colors.white,
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ),
