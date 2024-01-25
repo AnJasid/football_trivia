@@ -12,15 +12,19 @@ class QuestionsSummary extends StatelessWidget {
       height: 600,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.4),
+          color: Colors.white.withOpacity(0.2),
+          borderRadius: BorderRadius.circular(8),
         ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: summaryData.map(
-              (data) {
-                return SummaryItem(data);
-              },
-            ).toList(),
+        child: Padding(
+          padding: const EdgeInsetsDirectional.all(10),
+          child: SingleChildScrollView(
+            child: Column(
+              children: summaryData.map(
+                (data) {
+                  return SummaryItem(data);
+                },
+              ).toList(),
+            ),
           ),
         ),
       ),

@@ -23,17 +23,34 @@ class SummaryItem extends StatelessWidget {
           // const SizedBox(width: 20),
           Container(
         decoration: BoxDecoration(
+          color: const Color(0xff333333),
+          borderRadius: BorderRadius.circular(15),
           border: Border.all(
             color: Colors.white,
             width: 1.0,
           ),
-          color: Colors.black.withOpacity(0.5),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black,
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              const SizedBox(height: 5),
+              Text(
+                'Correct Answer: ${itemData['correct_answer']}',
+                style: TextStyle(
+                  color: Colors.amber[300],
+                ),
+              ),
+              const SizedBox(height: 8),
               Text(
                 itemData['question'] as String,
                 style: const TextStyle(
@@ -45,43 +62,63 @@ class SummaryItem extends StatelessWidget {
               const SizedBox(height: 5),
               Row(
                 children: [
+                  // Container(
+                  //   width: 20.0,
+                  //   height: 20.0,
+                  //   decoration: BoxDecoration(
+                  //     shape: BoxShape.circle,
+                  //     color:
+                  //         itemData['user_answer'] == itemData['correct_answer']
+                  //             ? Colors.green
+                  //             : Colors.red,
+                  //   ),
+                  //   child: Center(
+                  //     child: Icon(
+                  //       itemData['user_answer'] == itemData['correct_answer']
+                  //           ? Icons.check
+                  //           : Icons.cancel,
+                  //       size: 15,
+                  //       color: Colors.white,
+                  //     ),
+                  //   ),
+                  // ),
                   Container(
-                    width: 20.0,
-                    height: 20.0,
                     decoration: BoxDecoration(
-                      shape: BoxShape.circle,
+                      borderRadius: BorderRadius.circular(10),
                       color:
                           itemData['user_answer'] == itemData['correct_answer']
                               ? Colors.green
                               : Colors.red,
                     ),
-                    child: Center(
-                      child: Icon(
-                        itemData['user_answer'] == itemData['correct_answer']
-                            ? Icons.check
-                            : Icons.cancel,
-                        size: 15,
-                        color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 1,
                       ),
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Text(
-                      itemData['user_answer'] as String,
-                      style: const TextStyle(
-                        color: Color.fromARGB(255, 202, 171, 252),
+                      child: Row(
+                        children: [
+                          Icon(
+                            itemData['user_answer'] ==
+                                    itemData['correct_answer']
+                                ? Icons.check
+                                : Icons.cancel,
+                            size: 15,
+                            color: Colors.white,
+                          ),
+                          const SizedBox(width: 2),
+                          Text(
+                            itemData['user_answer'] as String,
+                            style: const TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ],
               ),
-              Text(
-                'Correct Answer: ${itemData['correct_answer']}',
-                style: const TextStyle(
-                  color: Color.fromARGB(255, 181, 254, 246),
-                ),
-              ),
+              const SizedBox(height: 8),
             ],
           ),
         ),
