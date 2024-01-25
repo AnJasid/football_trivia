@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:football_trivia/utils/styles.dart';
 
 class AnswerButton extends StatelessWidget {
   const AnswerButton({
