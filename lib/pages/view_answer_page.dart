@@ -45,7 +45,15 @@ class ViewAnswerPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
+              const Text(
+                'VIEW ANSWER',
+                style: TextStyle(
+                    fontSize: 23,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900),
+              ),
+              const SizedBox(height: 10),
               QuestionsSummary(summaryData),
               const SizedBox(height: 40),
               CustomButton(

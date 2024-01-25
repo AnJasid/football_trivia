@@ -147,15 +147,16 @@ class _ResultsPageState extends State<ResultsPage> {
                             const Text(
                               'Your Score',
                               style: TextStyle(
-                                color: Colors.black,
+                                color: Colors.black87,
                                 fontWeight: FontWeight.w900,
                               ),
                             ),
                             Text(
                               '${numCorrectQuestions * 10}%',
                               style: const TextStyle(
-                                color: Colors.black,
+                                color: Colors.black87,
                                 fontWeight: FontWeight.w900,
+                                fontSize: 18,
                               ),
                             ),
                           ],
@@ -192,7 +193,7 @@ class _ResultsPageState extends State<ResultsPage> {
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(width: 2),
+                                  const SizedBox(width: 6),
                                   Text(
                                     '${((widget.elapsedTime % 3600) ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
                                     style: const TextStyle(
@@ -227,7 +228,7 @@ class _ResultsPageState extends State<ResultsPage> {
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(width: 2),
+                                  const SizedBox(width: 6),
                                   Text(
                                     numCorrectQuestions.toString(),
                                     // ignore: prefer_const_constructors
@@ -267,7 +268,7 @@ class _ResultsPageState extends State<ResultsPage> {
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(width: 2),
+                                  const SizedBox(width: 6),
                                   const Text(
                                     '25',
                                     style: TextStyle(
@@ -302,7 +303,7 @@ class _ResultsPageState extends State<ResultsPage> {
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(width: 2),
+                                  const SizedBox(width: 6),
                                   Text(
                                     '${(numTotalQuestions - numCorrectQuestions)}',
                                     // ignore: prefer_const_constructors
