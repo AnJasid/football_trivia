@@ -34,7 +34,11 @@ class AnswerButton extends StatelessWidget {
         ),
         child: Text(
           answerText,
-          style: TextAppearance.bebasNeueMedium,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+          ),
+          // style: TextAppearance.bebasNeueMedium,
           textAlign: TextAlign.center,
         ),
       ),

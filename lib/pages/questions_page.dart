@@ -156,12 +156,19 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                           // question number
                           Text(
                             'Question ${currentQuestionIndex + 1} / 25',
-                            style: TextAppearance.bebasNeueSmall,
+                            // style: TextAppearance.bebasNeueSmall,
+                            style: const TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                           const SizedBox(height: 10),
                           Text(
                             currentQuestion.questionText,
-                            style: TextAppearance.bebasNeueMedium,
+                            // style: TextAppearance.bebasNeueMedium,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
                             textAlign: TextAlign.left,
                           ),
                           const SizedBox(height: 25),
