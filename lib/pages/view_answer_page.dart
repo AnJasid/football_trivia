@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_trivia/components/custom_button.dart';
-import 'package:football_trivia/data/questions.dart';
+import 'package:football_trivia/players_data/questions.dart';
 import 'package:football_trivia/questions_summary/questions_summary.dart';
 
 class ViewAnswerPage extends StatelessWidget {

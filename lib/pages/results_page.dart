@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_trivia/components/custom_button.dart';
-import 'package:football_trivia/data/questions.dart';
+import 'package:football_trivia/players_data/questions.dart';
 import 'package:football_trivia/pages/start_page.dart';
 import 'package:football_trivia/pages/view_answer_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';

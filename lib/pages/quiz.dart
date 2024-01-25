@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:football_trivia/data/questions.dart';
+import 'package:football_trivia/players_data/questions.dart';
 import 'package:football_trivia/pages/questions_page.dart';
 import 'package:football_trivia/pages/results_page.dart';
 import 'package:football_trivia/pages/start_page.dart';

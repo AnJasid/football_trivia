@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_trivia/components/answer_button.dart';
-import 'package:football_trivia/data/questions.dart';
-import 'package:football_trivia/utils/styles.dart';
+import 'package:football_trivia/players_data/questions.dart';
 
 class QuestionsPage extends StatefulWidget {
   const QuestionsPage({
@@ -23,7 +22,6 @@ class QuestionsPage extends StatefulWidget {
 
 class _QuestionsScreenState extends State<QuestionsPage> {
   var currentQuestionIndex = 0;
-  double containerHeight = 50.0;
 
   @override
   void initState() {
@@ -42,7 +40,6 @@ class _QuestionsScreenState extends State<QuestionsPage> {
   Widget build(BuildContext context) {
     final currentQuestion = questions[currentQuestionIndex];
     final shuffledAnswers = currentQuestion.shuffledAnswers;
-    // Initial height of the container
 
     return SafeArea(
       child: SizedBox(
@@ -56,12 +53,6 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  // Text(
-                  //   'Time spent: ${(widget.elapsedTime ~/ 3600).toString().padLeft(2, '0')}:${((widget.elapsedTime % 3600) ~/ 60).toString().padLeft(2, '0')}:${(widget.elapsedTime % 60).toString().padLeft(2, '0')}',
-                  //   style: const TextStyle(fontSize: 16.0, color: Colors.white),
-                  // ),
-                  // const SizedBox(height: 10),
-
                   Container(
                     // height: 600,
                     width: double.infinity,
@@ -76,7 +67,7 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                           color: Colors.black,
                           spreadRadius: 2,
                           blurRadius: 5,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: Offset(0, 3),
                         ),
                       ],
                     ),
@@ -156,7 +147,6 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                           // question number
                           Text(
                             'Question ${currentQuestionIndex + 1} / 25',
-                            // style: TextAppearance.bebasNeueSmall,
                             style: const TextStyle(
                               color: Colors.white,
                             ),
@@ -164,7 +154,6 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                           const SizedBox(height: 10),
                           Text(
                             currentQuestion.questionText,
-                            // style: TextAppearance.bebasNeueMedium,
                             style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
@@ -172,57 +161,11 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                             textAlign: TextAlign.left,
                           ),
                           const SizedBox(height: 25),
-
-                          // ElevatedButton(
-                          //   onPressed: () {
-                          //     setState(() {
-                          //       containerHeight == 50.0
-                          //           ? containerHeight = 200.0
-                          //           : containerHeight = 50.0;
-                          //     });
-                          //   },
-                          //   child: const Text('data'),
-                          // ),
-                          // const SizedBox(height: 16.0),
-                          // ElevatedButton(
-                          //   onPressed: () {
-                          //     setState(() {
-                          //     containerHeight == 100.0
-                          //         ? containerHeight = 200.0
-                          //         : containerHeight = 100.0;
-                          //   });
-                          //   child: Text('dat'),
-                          // ),
-
-                          // Padding(
-                          //   padding: const EdgeInsets.symmetric(vertical: 10),
-                          //   child: Container(
-                          //     decoration: BoxDecoration(
-                          //       color: Colors.transparent,
-                          //       border: Border.all(
-                          //         color: Colors.white,
-                          //         width: 2.0,
-                          //       ),
-                          //     ),
-                          //     child: Text(
-                          //       currentQuestion.questionText,
-                          //       style: TextAppearance.bebasNeueMedium,
-                          //       textAlign: TextAlign.left,
-                          //     ),
-                          //   ),
-                          // ),
-                          // question text
-                          // Text(
-                          //   currentQuestion.questionText,
-                          //   style: TextAppearance.bebasNeueMedium,
-                          //   textAlign: TextAlign.left,
-                          // ),
                         ],
                       ),
                     ),
                   ),
                   const SizedBox(height: 25),
-
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: Container(
@@ -261,19 +204,6 @@ class _QuestionsScreenState extends State<QuestionsPage> {
                       ),
                     ),
                   ),
-
-                  // const SizedBox(height: 40),
-
-                  // ...currentQuestion.shuffledAnswers.map(
-                  //   (answer) {
-                  //     return AnswerButton(
-                  //       answerText: answer,
-                  //       onTap: () {
-                  //         answerQuestion(answer);
-                  //       },
-                  //     );
-                  //   },
-                  // ),
                 ],
               ),
             ),
