@@ -497,7 +497,7 @@ class _ResultsPageState extends State<ResultsPage> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     // button Restart
                     CustomButton(
