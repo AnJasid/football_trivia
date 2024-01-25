@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage(this.startQuiz, {super.key});
