@@ -96,6 +96,14 @@ class _ResultsPageState extends State<ResultsPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const Text(
+              'RESULTS',
+              style: TextStyle(
+                  fontSize: 23,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w900),
+            ),
+            const SizedBox(height: 20),
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
