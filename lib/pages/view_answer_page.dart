@@ -42,24 +42,26 @@ class ViewAnswerPage extends StatelessWidget {
         height: double.infinity,
         child: Container(
           margin: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              const Text(
-                'VIEW ANSWER',
-                style: TextStyle(
-                    fontSize: 23,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w900),
-              ),
-              const SizedBox(height: 10),
-              QuestionsSummary(summaryData),
-              const SizedBox(height: 20),
-              CustomButton(
-                  onTap: () => Navigator.pop(context),
-                  buttonText: 'BACK',
-                  iconData: Icons.arrow_back_rounded),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const Text(
+                  'VIEW ANSWER',
+                  style: TextStyle(
+                      fontSize: 23,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900),
+                ),
+                const SizedBox(height: 10),
+                QuestionsSummary(summaryData),
+                const SizedBox(height: 20),
+                CustomButton(
+                    onTap: () => Navigator.pop(context),
+                    buttonText: 'BACK',
+                    iconData: Icons.arrow_back_rounded),
+              ],
+            ),
           ),
         ),
       ),

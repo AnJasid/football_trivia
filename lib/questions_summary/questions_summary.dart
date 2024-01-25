@@ -9,7 +9,7 @@ class QuestionsSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 550,
+      height: 530,
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.2),

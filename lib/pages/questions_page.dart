@@ -48,7 +48,7 @@ class _QuestionsScreenState extends State<QuestionsPage> {
           // margin: const EdgeInsets.all(40),
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(vertical: 5),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
