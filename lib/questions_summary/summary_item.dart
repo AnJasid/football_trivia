@@ -62,26 +62,6 @@ class SummaryItem extends StatelessWidget {
               const SizedBox(height: 5),
               Row(
                 children: [
-                  // Container(
-                  //   width: 20.0,
-                  //   height: 20.0,
-                  //   decoration: BoxDecoration(
-                  //     shape: BoxShape.circle,
-                  //     color:
-                  //         itemData['user_answer'] == itemData['correct_answer']
-                  //             ? Colors.green
-                  //             : Colors.red,
-                  //   ),
-                  //   child: Center(
-                  //     child: Icon(
-                  //       itemData['user_answer'] == itemData['correct_answer']
-                  //           ? Icons.check
-                  //           : Icons.cancel,
-                  //       size: 15,
-                  //       color: Colors.white,
-                  //     ),
-                  //   ),
-                  // ),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),

@@ -115,7 +115,7 @@ class _ResultsPageState extends State<ResultsPage> {
                               ),
                             ),
                             Text(
-                              '${numCorrectQuestions * 10}%',
+                              '${(numCorrectQuestions / 25 * 100).toStringAsFixed(2)}%',
                               style: const TextStyle(
                                 color: Colors.black87,
                                 fontWeight: FontWeight.w900,

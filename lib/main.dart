@@ -8,7 +8,6 @@ void main() {
   OneSignal.initialize("27350c67-5d07-4899-b450-10b7425fd642");
   OneSignal.Notifications.requestPermission(true);
 
-  // to set the orientation to portrait
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
